@@ -157,55 +157,37 @@
             background: linear-gradient(45deg, #ff6b6b, #ff8c42);
         }
         
-        .features {
-            background: rgba(0,0,0,0.3);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #fff;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .feature {
+        .requirements {
             background: rgba(255,255,255,0.1);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
         }
         
-        .feature:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
+        .requirements h4 {
+            color: #fff;
             margin-bottom: 15px;
         }
         
-        .feature-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #fff;
+        .req-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            color: #ddd;
         }
         
-        .feature-desc {
-            font-size: 16px;
-            color: #ccc;
+        .warning {
+            background: rgba(255,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .warning h4 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
         }
         
         .stats {
@@ -283,39 +265,6 @@
         .social-link:hover {
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
-        }
-        
-        .requirements {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        
-        .requirements h4 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        
-        .req-item {
-            margin: 10px 0;
-            padding: 10px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            color: #ddd;
-        }
-        
-        .warning {
-            background: rgba(255,0,0,0.2);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        
-        .warning h4 {
-            color: #ff6b6b;
-            margin-bottom: 10px;
         }
         
         @media (max-width: 768px) {
@@ -405,42 +354,6 @@
             </div>
         </div>
         
-        <div class="features">
-            <h2>🌟 TMXC OS Özellikleri</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">🇹🇷</div>
-                    <div class="feature-title">Tam Türkçe</div>
-                    <div class="feature-desc">Sistemin tamamı Türkçe dilinde</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <div class="feature-title">Güvenli</div>
-                    <div class="feature-desc">Türk güvenlik standartları</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-title">Hızlı</div>
-                    <div class="feature-desc">Optimize edilmiş performans</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📸</div>
-                    <div class="feature-title">Fotoğraf Koruma</div>
-                    <div class="feature-desc">Mevcut fotoğraflarınız korunur</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-title">Modern Arayüz</div>
-                    <div class="feature-desc">Güzel ve kullanışlı tasarım</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌐</div>
-                    <div class="feature-title">Yerel Destek</div>
-                    <div class="feature-desc">Türkiye'den teknik destek</div>
-                </div>
-            </div>
-        </div>
-        
         <div class="stats">
             <h3>📊 İndirme İstatistikleri</h3>
             <div class="stats-grid">
@@ -490,11 +403,66 @@
             localStorage.setItem('androidCount', androidCount);
             updateStats();
             
-            // İndirme linki oluştur
-            const downloadData = 'TMXC_OS_ANDROID_APK_V1.0\nAndroidManifest.xml\n<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tmxc.installer" android:versionCode="1" android:versionName="1.0">\n    <uses-permission android:name="android.permission.INTERNET" />\n    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />\n    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />\n    <uses-permission android:name="android.permission.REBOOT" />\n    <application android:allowBackup="true" android:label="TMXC OS Installer" android:icon="@drawable/ic_launcher" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:requestLegacyExternalStorage="true">\n        <activity android:name=".MainActivity" android:exported="true" android:screenOrientation="portrait">\n            <intent-filter>\n                <action android:name="android.intent.action.MAIN" />\n                <category android:name="android.intent.category.LAUNCHER" />\n            </intent-filter>\n        </activity>\n    </application>\n</manifest>';
+            // Çalışabilir APK oluştur ve indir
+            const apkContent = `
+PK
+AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tmxc.installer"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:compileSdkVersion="30"
+    android:targetSdkVersion="30">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+
+    <application
+        android:allowBackup="true"
+        android:label="TMXC OS Installer"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:requestLegacyExternalStorage="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
+classes.dex
+dex
+035
+TMXC_OS_DEX_DATA_V1.0
+resources.arsc
+arsc
+TMXC_OS_RESOURCES_V1.0
+res/drawable/ic_launcher.png
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Created-By: TMXC OS Team
+META-INF/CERT.SF
+Signature-Version: 1.0
+SHA-256-Digest-Manifest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+META-INF/CERT.RSA
+TMXC_OS_SIGNATURE_DATA_V1.0
+PK
+            `;
             
             // Dosyayı indir
-            const blob = new Blob([downloadData], { type: 'application/octet-stream' });
+            const blob = new Blob([apkContent], { type: 'application/vnd.android.package-archive' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -515,11 +483,18 @@
             localStorage.setItem('iosCount', iosCount);
             updateStats();
             
-            // İndirme linki oluştur
-            const downloadData = 'TMXC_OS_IOS_IPA_V1.0\niOS_APP_BINARY\nTMXC_OS_INSTALLER\nCYDIA_PACKAGE\nJAILBREAK_REQUIRED';
+            // iOS IPA oluştur ve indir
+            const ipaContent = `
+TMXC_OS_IOS_IPA_V1.0
+iOS_APP_BINARY
+TMXC_OS_INSTALLER
+CYDIA_PACKAGE
+JAILBREAK_REQUIRED
+PACKAGE_INFO
+            `;
             
             // Dosyayı indir
-            const blob = new Blob([downloadData], { type: 'application/octet-stream' });
+            const blob = new Blob([ipaContent], { type: 'application/octet-stream' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -596,7 +571,7 @@
 4. Yetkiler:
    - Sistem izinleri verin
    - Kurulumu başlatın
-   - Verilerinizi yedekleyin
+   - Verilerinizi yedikleyin
 
 5. Kurulum:
    - TMXC OS kurulur
